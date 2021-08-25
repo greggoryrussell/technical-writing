@@ -2,14 +2,15 @@
 
 # xyz-monitor
 
+[XZY-Monitor](https://xzy-monitor.xyz.edu) is a monitoring server running Icinga2. The entire **configuration is code**. Please see the next section called **Important Folders and Files** for an explanation of the important paths. 
 
 # Important Folders and Files
 
 |Directory or File|Path in xyz-monitor|Comment|
 |---|---|---|
-|Icinga 2|`/etc/icinga2`|---|
-|This Repo's location|`/opt/icinga/icinga2`|A symlink connects this repo's managed configuration files to the Icinga 2 service running on xyz-monitor. 
-|Configuration files managed by this repo.|`/etc/icinga2/conf.d/xzy`| **Symlinked**. If you're ssh'd in, this is usually the directory you'll be working in. All .conf files MUST pass a validiation check.|
+|Icinga 2|`/etc/icinga2`|Icinga2's main directory.|
+|This Repo's location|`/opt/icinga/icinga2`|A symlink connects this repo's managed configuration files to the Icinga 2 service running on `host.xyz-monitor`. 
+|Configuration files managed by this repo.|`/etc/icinga2/conf.d/xzy`| **Symlinked**. If you're ssh'd in, this is usually the directory you'll be working in. All .conf files MUST pass a validiation check. **PLEASE do not directly place files here**. Please fork this repo and push your config changes. If the CI/CD clears you are free to proceed with opening a merge request into the production repository.|
 |icingaweb2|`/etc/icingaweb2/`|This is essentially the face of [xyz-monitor](https://xyz-monitor.example.edu). The interface in which most people are familiar with. 
 |Web Interface Permission Roles|`/etc/icingaweb2/roles.ini`|Determines which user get's what permissions for the web dashboard. Ex. Can a user Acknowledge a host or disable notifications? Check in here||
 
