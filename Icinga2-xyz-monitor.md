@@ -1,4 +1,4 @@
-> This is a scrubbed example of a README document I wrote for a university's Icinga2 repository hosted on Gitlab. My first project with this university was migrating their legacy Icinga server over to Icinga2.
+> This is a scrubbed example of a README document I wrote for a university's Icinga2 repository hosted on Gitlab. My first project with this university was migrating their legacy Icinga server codebase over to Icinga2 syntax.
 
 # xyz-monitor
 
@@ -10,9 +10,9 @@
 |---|---|---|
 |Icinga 2|`/etc/icinga2`|Icinga2's main directory.|
 |This Repo's location|`/opt/icinga/icinga2`|A symlink connects this repo's managed configuration files to the Icinga 2 service running on `host.xyz-monitor`. 
-|Configuration files managed by this repo.|`/etc/icinga2/conf.d/xzy`| **Symlinked**. If you're ssh'd in, this is usually the directory you'll be working in. All .conf files MUST pass a validiation check. **PLEASE do not directly place files here**. Please fork this repo and push your config changes. If the CI/CD clears you are free to proceed with opening a merge request into the production repository.|
+|Configuration files managed by this repo.|`/etc/icinga2/conf.d/xzy`| **Symlinked**. If you're ssh'd in, this is usually the directory you'll be working in. *All .conf files MUST pass a validiation check*. **PLEASE do not directly place files here**. The proper procedure is to fork this repo and push your config changes to your private repo. If the CI/CD clears you are free to proceed with opening a [Merge Request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html) into the production repository.|
 |icingaweb2|`/etc/icingaweb2/`|This is essentially the face of [xyz-monitor](https://xyz-monitor.example.edu). The interface in which most people are familiar with. 
-|Web Interface Permission Roles|`/etc/icingaweb2/roles.ini`|Determines which user get's what permissions for the web dashboard. Ex. Can a user Acknowledge a host or disable notifications? Check in here||
+|Web Interface Permission Roles|`/etc/icingaweb2/roles.ini`|Determines which user get's what permissions for the web dashboard. For example: If a user can't `Acknowledge` a host or `Schedule Downtime` check for their username here. For more information please see the [official documentation](https://icinga.com/docs/icinga-web-2/latest/doc/06-Security/#roles).||
 
 # Important Commands
 
